@@ -1,0 +1,60 @@
+{
+  "name": "apprentice",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "APPRENTICE \u2014 a voice-first Socratic seminar practice room (Haunted Hacks local demo).",
+  "scripts": {
+    "setup": "bun install && cd actor && bun install",
+    "dev": "bun scripts/dev.ts",
+    "dev:actor": "cd actor && terse actor dev",
+    "dev:server": "bun --watch server/index.ts",
+    "dev:web": "vite --config web/vite.config.ts",
+    "actor:generate": "terse actor generate --out-dir server/terse/generated --non-interactive",
+    "relay:bootstrap": "bun scripts/relayBootstrap.ts",
+    "elevenlabs:voices": "bun scripts/elevenlabsVoices.ts",
+    "reset:local": "bun scripts/resetLocal.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p web/tsconfig.json --noEmit && tsc -p actor/tsconfig.json --noEmit",
+    "lint": "eslint .",
+    "test": "bun test tests --path-ignore-patterns 'tests/integration/**'",
+    "test:integration": "RUN_TERSE_INTEGRATION=1 bun test tests/terseRestart.test.ts",
+    "test:live": "bun scripts/smokeLive.ts --text-only",
+    "build:web": "vite build --config web/vite.config.ts",
+    "test:recovery:backend": "bun --no-env-file scripts/rehearseBackendRecovery.ts",
+    "test:terse:alarms": "bun --no-env-file scripts/rehearseTerseRecovery.ts",
+    "dev:external": "bun scripts/dev.ts --external-peer theo",
+    "worker:external": "bun server/agents/worker.ts theo --stdio"
+  },
+  "dependencies": {
+    "@elevenlabs/client": "1.32.1",
+    "@elevenlabs/react": "1.20.2",
+    "@fontsource-variable/caveat": "5.3.0",
+    "@fontsource-variable/fraunces": "5.3.0",
+    "@fontsource-variable/inter": "5.3.0",
+    "@radix-ui/themes": "^3.3.0",
+    "@relaycast/sdk": "12.3.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "roughjs": "4.6.6",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@types/bun": "1.4.4",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.1.2",
+    "bun": "1.4.4",
+    "eslint": "10.14.0",
+    "eslint-plugin-react-hooks": "7.1.1",
+    "globals": "17.13.0",
+    "terse-cli": "0.14.9",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.72.1",
+    "vite": "8.3.5"
+  },
+  "trustedDependencies": [
+    "bun",
+    "esbuild"
+  ]
+}

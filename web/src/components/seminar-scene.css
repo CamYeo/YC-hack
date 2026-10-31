@@ -1,0 +1,222 @@
+/* Local to the seminar room: the lobby and shared theme keep their own styles. */
+.room-page{position:relative;isolation:isolate}
+.room-page .room-heading{margin-bottom:20px;align-items:center}
+.room-page .room-heading h1{font-size:clamp(23px,2.1vw,30px);max-width:860px;line-height:1.24;margin-top:7px}
+.room-page .room-heading .eyebrow{font-size:10px;letter-spacing:.12em}
+.room-page .room-heading-actions{gap:16px;flex-shrink:0}
+.room-page .seminar-layout{grid-template-columns:minmax(0,1fr) 312px;gap:24px;align-items:start}
+.room-page .table-column{min-width:0}
+.room-page .seminar-scene{min-height:0;overflow:hidden;border-radius:12px}
+.room-page .scene-heading{padding:15px 20px;min-height:49px}
+.room-page .scene-heading .eyebrow{font-size:9px;letter-spacing:.15em}
+.room-page .scene-heading .room-state{font-size:10px}
+.room-page .scene-table{position:relative}
+.room-page .scene-classroom .scene-table{padding:14px 0 8px}
+.room-page .scene-classroom .scene-participants{padding:8px 24px 25px;gap:28px}
+.room-page .scene-classroom .participant-label{width:150px}
+.room-page .scene-classroom .participant-label .drawn-avatar{width:98px;height:104px;margin-bottom:12px}
+.room-page .scene-classroom .participant-pill{font-size:12px}
+.room-page .scene-classroom .participant-state{font-size:10px}
+.room-page .live-caption{min-height:120px;padding:21px 28px 25px}
+.room-page .live-caption .caption-speaker{font-size:10px;margin-bottom:8px}
+.room-page .live-caption p{font-size:clamp(21px,1.8vw,25px);line-height:1.38;max-width:720px;margin:0 auto}
+.room-page .live-caption:not(.has-speech) p{font-size:20px}
+.room-page .human-place{margin-top:13px;border:1px solid var(--line);border-radius:10px;background:var(--surface);padding:0 17px 5px}
+.room-page .human-place .control-dock{padding:15px 0 13px;border-bottom:1px solid var(--line);gap:12px}
+.room-page .human-place .composer{background:none;border:0;border-radius:0;padding:13px 0 8px}
+.room-page .human-place .composer textarea{font-size:14px;min-height:63px;line-height:1.6;padding:9px 0}
+.room-page .human-place .composer-top>label{font-size:11px}
+.room-page .human-place .composer:focus-within{border-color:transparent}
+.room-page .human-place .composer:focus-within textarea{box-shadow:0 2px 0 -1px var(--amber)}
+.room-page .human-place .composer-hint{font-size:9px;max-width:200px}
+.room-page .human-place .your-seat strong{font-size:12px}
+.room-page .human-place .your-seat small{font-size:10px}
+.room-page .human-place .call-controls{gap:6px}
+.room-page .human-place .control-icon{width:38px;height:42px}
+.room-page .under-table{font-size:10px;padding:12px 2px 0;gap:12px}
+.room-page .under-table .text-button{font-size:11px}
+.room-page .seminar-notebook{position:relative;background:#f2ead8;color:#3b342c;border:1px solid #c5af87;border-radius:3px 12px 12px 3px;padding:21px 19px 20px 24px;box-shadow:3px 4px 0 #d4c4a8,6px 7px 0 #b7a17c;--text:#3b342c;--muted:#716450;--amber:#86542d;--surface:#fbf6e9;--raised:#e9dfca;--line:#d4c5a9;--faint:#e9e0cd;--red:#9c4034;--green:#536547}
+.room-page .seminar-notebook::before{content:'';position:absolute;top:0;bottom:0;left:7px;border-left:1px solid #c8b796;pointer-events:none}
+.room-page .notebook-kicker{display:flex;align-items:center;gap:8px;color:#856a44;font-size:8px;font-weight:650;letter-spacing:.12em;text-transform:uppercase;border-bottom:1px solid #cdbb9a;padding:0 0 14px;margin-bottom:18px}
+.room-page .notebook-kicker>span:last-child{margin-left:auto;font-size:14px}
+.room-page .seminar-notebook .discussion-board{padding:0;border:0;max-height:790px}
+.room-page .seminar-notebook .board-heading{align-items:start}
+.room-page .seminar-notebook .board-heading h2{font-size:25px;line-height:1.15;max-width:180px}
+.room-page .seminar-notebook .board-heading>span{font-size:10px;margin-top:5px}
+.room-page .seminar-notebook .board-tabs{margin:15px 0 8px;gap:22px}
+.room-page .seminar-notebook .board-tabs button{font-size:11px;min-height:38px}
+.room-page .seminar-notebook .board-content{min-height:345px;max-height:610px;background:repeating-linear-gradient(transparent,transparent 31px,#c8b79726 31px,#c8b79726 32px);scrollbar-color:#bca780 transparent}
+.room-page .seminar-notebook .board-empty{padding:55px 8px 35px}
+.room-page .seminar-notebook .board-empty>svg{color:#a08861}
+.room-page .seminar-notebook .board-empty h3{font-size:25px;line-height:1.2}
+.room-page .seminar-notebook .board-empty p{font-size:12px;line-height:1.8}
+.room-page .seminar-notebook .thought-card,.room-page .seminar-notebook .transcript-turn{background:#f2ead8e8}
+.room-page .seminar-notebook .thought-card>p,.room-page .seminar-notebook .transcript-turn>p{font-size:13px;line-height:1.7}
+.room-page .seminar-notebook .thought-meta,.room-page .seminar-notebook .thought-status{font-size:9px}
+.room-page .seminar-notebook .card-actions .text-button{font-size:10px;min-height:34px}
+.room-page .seminar-notebook .open-question{background:#e9ddc1;border-color:#cbb88e;box-shadow:0 2px 4px #67512a10;padding:15px}
+.room-page .seminar-notebook .open-question p{font-size:23px}
+.room-page .seminar-notebook .source-link{color:#72502b;font-size:10px}
+.room-page .seminar-notebook .transcript-head strong{font-size:12px}
+.room-page .seminar-notebook .transcript-head>span{font-size:10px}
+.room-page .seminar-notebook textarea{background:#fbf6e9;color:#3b342c;border-color:#cdbb9a}
+
+/* Halloween is a place to sit, rather than three portrait thumbnails. */
+.room-halloween::before{content:'';position:absolute;z-index:-1;inset:-25px -48px 15%;background:linear-gradient(#100e14b8,#100e14e8 72%,#100e14),url('/assets/apprentice/backgrounds/seminar-library.png') center top/cover no-repeat;opacity:.8;pointer-events:none}
+.room-halloween .room-heading h1{color:#f4e8d1;font-weight:420}
+.room-halloween .room-heading .eyebrow{color:#cba46d}
+.room-halloween .seminar-scene{background:#17121a;border:1px solid #785733;box-shadow:0 15px 50px #0007,0 0 0 4px #151018,0 0 0 5px #493524;border-radius:12px}
+.room-halloween .scene-heading{background:#17121af5;border-bottom:1px solid #6a4e314d;color:#ddc29b}
+.room-halloween .scene-heading>.eyebrow{color:#cfaa72}
+.room-halloween .scene-heading .room-state{color:#e0c8a4}
+.room-halloween .scene-heading .status-dot{color:#efbc76;box-shadow:0 0 9px #e9a35c66}
+.room-halloween .scene-table-illustrated{aspect-ratio:1.65;overflow:hidden;background:#231610}
+.room-halloween .scene-cast-art{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 38%}
+.room-halloween .scene-art-vignette{position:absolute;inset:0;background:linear-gradient(#0c090e10 45%,#0c090e00 58%,#0c090e6b 88%,#17121ae8),linear-gradient(90deg,#09050b2e,transparent 15%,transparent 85%,#09050b2e);pointer-events:none}
+.room-halloween .scene-speaker-light{position:absolute;width:32%;height:73%;top:5%;border-radius:48%;pointer-events:none;mix-blend-mode:screen;background:radial-gradient(ellipse at center,#f0b96110,transparent 63%);box-shadow:inset 0 -6px 35px -24px #f6bc75;animation:scene-breathe 3s ease-in-out infinite}
+.room-halloween .light-maya{left:2%}.room-halloween .light-facilitator{left:34%;top:0}.room-halloween .light-theo{right:0;top:11%}
+.room-halloween .scene-participants{position:absolute;inset:0;padding:0;display:block;pointer-events:none}
+.room-halloween .scene-participants::after{display:none}
+.room-halloween .scene-participants .participant-label{position:absolute;top:65%;width:max-content;max-width:31%;padding:8px 12px 7px;border:1px solid #b1864a66;border-radius:5px;background:linear-gradient(150deg,#160f10ed,#23191bdd);box-shadow:0 3px 15px #0005;gap:3px;transform:translateX(-50%);transition:border-color .2s,box-shadow .2s,background .2s}
+.room-halloween .scene-participants .participant-maya{left:18%;top:63%}
+.room-halloween .scene-participants .participant-facilitator{left:51%;top:62%}
+.room-halloween .scene-participants .participant-theo{left:84%;top:65%}
+.room-halloween .scene-participants .participant-pill{font-size:clamp(10px,1.05vw,13px);font-family:var(--serif);font-weight:450;letter-spacing:.005em;min-height:0;border:0;padding:0;color:#f3dfb9;white-space:nowrap;line-height:1.3}
+.room-halloween .scene-participants .participant-state{font-size:8px;color:#d4bfa2;white-space:nowrap;font-style:normal;letter-spacing:.025em}
+.room-halloween .scene-participants .is-speaking{border-color:#f5bf70;background:linear-gradient(145deg,#492e1dec,#21161beb);box-shadow:0 0 0 2px #edb66521,0 0 30px #f1a34a38,0 5px 15px #0007}
+.room-halloween .scene-participants .is-speaking .participant-pill{color:#ffe5b0}
+.room-halloween .scene-participants .is-thinking .participant-state{color:#ffd08c}
+.room-halloween .scene-participants .voice-bars{color:#f5c77b;height:10px;margin-right:2px}
+.room-halloween .scene-empty-seat{position:absolute;left:50%;bottom:6%;transform:translateX(-50%);display:flex;align-items:center;gap:10px;white-space:nowrap;color:#ddc4a0;text-shadow:0 1px 4px #000;font:italic 16px var(--serif);letter-spacing:.01em}
+.room-halloween .scene-empty-seat .seat-flourish{color:#d6a15c;font-size:15px}
+.room-halloween .scene-empty-seat.seat-invited{color:#ffe3ae}
+.room-halloween .live-caption{background:linear-gradient(125deg,#1e1720,#17131c);border-top:1px solid #a1794445;color:#f5e9d4;padding:20px 28px 24px;min-height:118px}
+.room-halloween .live-caption .caption-speaker{color:#d6ad72;letter-spacing:.07em;font-size:10px}
+.room-halloween .live-caption p{font-size:clamp(21px,1.8vw,25px);font-weight:370;color:#f5e9d4}
+.room-halloween .live-caption:not(.has-speech) p{font-size:20px;color:#c6b49e}
+.room-halloween .pause-overlay{background:linear-gradient(#140d18ca,#140d18ed);backdrop-filter:blur(4px);color:#f5e9d4}
+.room-halloween .pause-overlay .eyebrow{color:#e4b46d}
+.room-halloween .pause-overlay p{color:#d4c2ac}
+.room-halloween .pause-overlay h2{font-size:35px}
+.room-halloween .pause-overlay .button.primary,.room-halloween .human-place .button.primary,.room-halloween .human-place .send-button{background:#dba960;color:#241811;border-color:#dba960}
+.room-halloween .pause-overlay .button.primary:hover:not(:disabled),.room-halloween .human-place .button.primary:hover:not(:disabled),.room-halloween .human-place .send-button:hover:not(:disabled){background:#f0c687;border-color:#f0c687}
+.room-halloween .human-place{background:linear-gradient(130deg,#241a24,#19151e);border-color:#604732;box-shadow:0 7px 25px #0003}
+.room-halloween .human-place .control-dock{border-color:#6b52313d}
+.room-halloween .human-place .your-avatar{background:#382a29;border-color:#9b784c;color:#e2c69b}
+.room-halloween .human-place .your-seat strong{color:#f2ddbc}
+.room-halloween .human-place .your-seat small{color:#b4a38f}
+.room-halloween .human-place .composer-top>label{color:#d2b998}
+.room-halloween .human-place .composer textarea{color:#f1e5d3}
+.room-halloween .human-place .composer textarea::placeholder{color:#a99a8a}
+.room-halloween .human-place .address-picker select{color:#d4b890;background:transparent}
+.room-halloween .human-place .address-picker option{background:#241b26;color:#f1e5d3}
+.room-halloween .human-place .text-button{color:#ddbc87}
+.room-halloween .human-place .icon-button{color:#e1c9a8}
+.room-halloween .human-place .icon-button:hover{background:#463140}
+.room-halloween .human-place .key-hint{border-color:#77552f;color:#674620;background:#efc788}
+.room-halloween .under-table{color:#ad9a84}
+.room-halloween .under-table .text-button{color:#d1ac79}
+.room-halloween .notice-bar{background:#2a2026;border-color:#74563b;color:#eed6b6}
+.room-halloween .evidence-panel,.room-halloween .behind-discussion{border-color:#493747}
+@keyframes scene-breathe{0%,100%{opacity:.45}50%{opacity:1}}
+
+@media(min-width:1440px){
+  .room-page .seminar-layout{grid-template-columns:minmax(0,1fr) 332px;gap:27px}
+}
+/* On a laptop, keep the live controls close without shrinking the cast's faces. */
+@media(min-width:861px){
+  .room-halloween{padding-top:18px}
+  .room-halloween .room-heading{margin-bottom:14px}
+  .room-halloween .scene-table-illustrated{height:clamp(280px,40vh,380px);aspect-ratio:auto}
+  .room-halloween .scene-cast-art{object-position:50% 0%}
+  .room-halloween .scene-participants .participant-label{top:auto;bottom:9px;padding:7px 11px 6px}
+  .room-halloween .scene-empty-seat{display:none}
+  .room-halloween .live-caption{min-height:92px;padding:12px 24px 15px}
+  .room-halloween .live-caption .caption-speaker{margin-bottom:6px}
+  .room-halloween .live-caption p{font-size:22px;line-height:1.3}
+  .room-halloween .live-caption:not(.has-speech) p{font-size:19px}
+  .room-halloween .human-place{margin-top:10px}
+  .room-halloween .human-place .control-dock{padding-block:12px}
+}
+@media(max-width:1050px){
+  .room-page .seminar-layout{grid-template-columns:minmax(0,1fr) 274px;gap:20px}
+  .room-page .seminar-notebook{padding:18px 16px 18px 20px}
+  .room-page .seminar-notebook .board-heading h2{font-size:22px}
+  .room-page .human-place{padding-inline:13px}
+  .room-page .human-place .your-seat{gap:8px}
+  .room-page .human-place .your-seat strong{font-size:10px}
+  .room-page .human-place .your-seat small{font-size:9px}
+  .room-page .human-place .call-controls{gap:3px}
+  .room-page .human-place .control-icon{width:33px}
+  .room-halloween .scene-participants .participant-label{padding:6px 8px}
+  .room-halloween .scene-participants .participant-pill{font-size:10px}
+  .room-halloween .scene-participants .participant-state{font-size:7px}
+}
+@media(max-width:860px){
+  .room-page .seminar-layout{grid-template-columns:minmax(0,1fr);gap:25px}
+  .room-page .seminar-notebook .discussion-board{max-height:650px}
+  .room-page .seminar-notebook .board-content{min-height:230px;max-height:410px}
+  .room-page .seminar-notebook .board-empty{padding:30px 20px}
+  .room-page .seminar-notebook .board-heading h2{max-width:none;font-size:26px}
+  .room-page .human-place .your-seat strong{font-size:12px}
+  .room-page .human-place .your-seat small{font-size:10px}
+  .room-page .human-place .control-icon{width:40px}
+  .room-halloween .scene-participants .participant-pill{font-size:14px}
+  .room-halloween .scene-participants .participant-state{font-size:9px}
+  .room-halloween .scene-participants .participant-label{padding:9px 12px}
+  .room-halloween .scene-empty-seat{font-size:18px}
+}
+@media(max-width:560px){
+  .room-page{padding-top:20px}
+  .room-page .room-heading{margin-bottom:17px}
+  .room-page .room-heading h1{font-size:25px;line-height:1.2}
+  .room-page .room-heading .eyebrow{font-size:9px;line-height:1.7}
+  .room-page .room-heading-actions{flex-direction:row;margin-top:8px;padding:0;justify-content:space-between}
+  .room-page .room-heading-actions .text-button{min-height:34px;font-size:11px}
+  .room-page .scene-heading{padding:12px;gap:8px;min-height:45px}
+  .room-page .scene-heading>.eyebrow{font-size:8px;letter-spacing:.1em}
+  .room-page .scene-heading .room-state{font-size:9px}
+  .room-page .scene-classroom .scene-participants{gap:4px;padding:10px 9px 21px}
+  .room-page .scene-classroom .participant-label{width:32%}
+  .room-page .scene-classroom .participant-label .drawn-avatar{width:80px;height:84px;margin-bottom:5px}
+  .room-page .scene-classroom .participant-pill{font-size:11px}
+  .room-page .scene-classroom .participant-state{font-size:9px}
+  .room-halloween::before{inset:-20px -20px 20%}
+  .room-halloween .seminar-scene{border-radius:8px;box-shadow:0 10px 30px #0007,0 0 0 3px #49352455}
+  .room-halloween .scene-table-illustrated{aspect-ratio:1.5}
+  .room-halloween .scene-cast-art{object-position:center}
+  .room-halloween .scene-participants .participant-label{max-width:33%;padding:6px 6px 5px;border-radius:3px}
+  .room-halloween .scene-participants .participant-maya{left:18%;top:62%}
+  .room-halloween .scene-participants .participant-facilitator{left:50%;top:62%}
+  .room-halloween .scene-participants .participant-theo{left:83%;top:63%}
+  .room-halloween .scene-participants .participant-pill{font-size:10px;line-height:1.3;white-space:normal}
+  .room-halloween .scene-participants .participant-state{font-size:7px;letter-spacing:0}
+  .room-halloween .scene-participants .voice-bars{display:none}
+  .room-halloween .scene-empty-seat{font-size:13px;gap:7px;bottom:5%;white-space:nowrap}
+  .room-page .live-caption,.room-halloween .live-caption{padding:18px 17px 21px;min-height:129px}
+  .room-page .live-caption p,.room-halloween .live-caption p{font-size:22px;line-height:1.35}
+  .room-page .live-caption:not(.has-speech) p,.room-halloween .live-caption:not(.has-speech) p{font-size:20px}
+  .room-page .live-caption .caption-speaker{font-size:10px;line-height:1.5}
+  .room-page .human-place{padding:0 12px 3px;margin-top:12px}
+  .room-page .human-place .control-dock{flex-wrap:wrap;gap:13px;padding:13px 0}
+  .room-page .human-place .your-seat{max-width:none;min-width:125px;flex:1}
+  .room-page .human-place .your-seat strong{font-size:11px}
+  .room-page .human-place .your-seat small{font-size:9px;max-width:none}
+  .room-page .human-place .call-controls{gap:3px}
+  .room-page .human-place .call-controls>.primary{min-width:74px;min-height:40px;font-size:12px}
+  .room-page .human-place .control-icon{width:34px;height:40px}
+  .room-page .human-place .composer-top>label{font-size:11px}
+  .room-page .human-place .address-picker select{font-size:10px;max-width:115px;min-height:36px}
+  .room-page .human-place .composer textarea{font-size:14px;min-height:78px}
+  .room-page .under-table{padding-top:10px;align-items:start;font-size:10px}
+  .room-page .under-table>span{max-width:210px}
+  .room-page .under-table .text-button{font-size:11px;min-height:40px}
+  .room-page .seminar-notebook{margin:0 4px 4px 0;padding:20px 17px 20px 22px}
+  .room-page .seminar-notebook .board-content{min-height:220px}
+  .room-page .seminar-notebook .board-tabs button{font-size:12px;min-height:42px}
+  .room-page .seminar-notebook .thought-card>p,.room-page .seminar-notebook .transcript-turn>p{font-size:14px}
+  .room-page .seminar-notebook .card-actions .text-button{font-size:11px;min-height:36px}
+  .room-page .seminar-notebook .board-empty p{font-size:13px}
+  .room-halloween .pause-overlay h2{font-size:30px}
+}
+@media(prefers-reduced-motion:reduce){.room-page .scene-speaker-light{animation:none}.room-page .scene-participants .participant-label{transition:none}}

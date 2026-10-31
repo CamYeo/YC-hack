@@ -1,0 +1,98 @@
+/* Shared Radix component treatment. Layout and illustrations stay app-specific. */
+.radix-themes {
+  --default-font-family: 'Inter Variable', sans-serif;
+  --heading-font-family: 'Fraunces Variable', Georgia, serif;
+  --cursor-button: pointer;
+}
+.app-shell.radix-themes {
+  --color-background: var(--bg);
+  color: var(--text);
+  padding-bottom: 40px;
+}
+.app-shell .app-header { border-bottom: 0; height: 100px; }
+.app-shell .brand-home .brand-name { font-size: 31px; font-weight: 470; }
+.app-shell .brand-home .brand-edition { font-size: 10px; letter-spacing: 0; margin-top: 5px; }
+.app-shell .header-right { gap: 25px; }
+.theme-control { display: inline-flex; align-items: center; gap: 10px; color: var(--muted); font-size: 12px; cursor: pointer; }
+.theme-control > svg { color: var(--amber); width: 19px; height: 19px; }
+.app-shell .rt-Button.home-button { border: 0; border-radius: 999px; padding: 0 13px; min-height: 40px; background: transparent; box-shadow: none; margin: 0; font-size: 12px; }
+.app-shell .rt-Button.home-button:hover { background: var(--raised); }
+.app-shell .rt-Button { font-family: var(--sans); font-weight: 500; letter-spacing: -.01em; }
+.app-shell .rt-Button.button { border: 0; border-radius: 999px; box-shadow: none; gap: 12px; }
+.app-shell .rt-Button.button.primary { background: var(--text); color: var(--bg); padding: 12px 23px; }
+.app-shell.theme-halloween .rt-Button.button.primary { background: #bf5b23; color: #fffaf3; }
+.app-shell.theme-halloween .room-page .human-place .rt-Button.button.primary,
+.app-shell.theme-halloween .room-page .human-place .rt-Button.button.primary:hover:not(:disabled),
+.app-shell.theme-halloween .room-page .pause-overlay .rt-Button.button.primary { background: #bf5b23; color: #fffaf3; border-color: transparent; }
+.app-shell .rt-Button.button.primary:hover:not(:disabled) { filter: brightness(1.08); transform: translateY(-1px); }
+.app-shell .rt-Button.button.secondary { color: var(--text); background: var(--raised); }
+.app-shell .rt-Button.button.secondary:hover:not(:disabled) { filter: brightness(1.12); }
+.app-shell .rt-Button.text-button { border-radius: 999px; min-height: 36px; padding-inline: 9px; margin: 0; box-shadow: none; }
+.app-shell .rt-IconButton { border-radius: 50%; box-shadow: none; }
+.app-shell .rt-SelectTrigger { border-radius: 12px; box-shadow: inset 0 0 0 1px var(--line); background: var(--surface); color: var(--text); min-height: 44px; font-size: 13px; width: 100%; }
+.app-shell .rt-SelectTrigger:hover { background: var(--raised); }
+.app-shell .rt-SelectTrigger:focus-visible { outline-offset: 3px; }
+.rt-SelectContent { border-radius: 16px; }
+.rt-SelectItem { min-height: 36px; border-radius: 8px; }
+.app-shell .rt-TextAreaRoot { border-radius: 14px; background: var(--surface); box-shadow: inset 0 0 0 1px var(--line); color: var(--text); }
+.app-shell .rt-TextAreaInput { background: transparent; border: 0; color: inherit; border-radius: inherit; font-family: var(--sans); padding: 12px; }
+.app-shell .rt-TextAreaInput:focus { outline: 0; }
+.app-shell .room-page .seminar-scene { border: 0; border-radius: 22px; box-shadow: none; }
+.app-shell .room-page .scene-heading { background: transparent; border-bottom: 0; }
+.app-shell .room-halloween::before { display: none; }
+.app-shell .room-halloween .room-heading h1 { color: var(--text); }
+.app-shell .room-page .room-heading .eyebrow { display: flex; align-items: center; gap: 9px; color: var(--muted); }
+.app-shell .room-page .room-heading .eyebrow > svg { color: #bf5b23; }
+.app-shell .room-halloween .seminar-scene { background: #17131a; }
+.app-shell .room-halloween .scene-heading { color: #ead8bd; }
+.app-shell .room-halloween .scene-participants .participant-label { border: 0; border-radius: 14px; padding: 8px 13px; background: #120e14cc; backdrop-filter: blur(10px); box-shadow: none; }
+.app-shell .room-halloween .scene-participants .is-speaking { background: #38281ae8; box-shadow: 0 0 0 1px #e1b27080; }
+.app-shell .room-page .human-place { border: 1px solid var(--line); border-radius: 14px; background: var(--surface); padding: 0 20px 8px; box-shadow: none; }
+.app-shell .room-page .human-place .control-dock { border-bottom-color: color-mix(in srgb, var(--line) 55%, transparent); }
+.app-shell .room-page .human-place .your-seat strong,
+.app-shell .room-page .human-place .composer textarea,
+.app-shell .room-page .human-place .composer-top > label { color: var(--text); }
+.app-shell .room-page .human-place .your-seat small,
+.app-shell .room-page .human-place .address-picker select,
+.app-shell .room-page .human-place .text-button { color: var(--muted); }
+.app-shell .room-page .human-place .address-picker option { background: var(--surface); color: var(--text); }
+.app-shell .room-page .human-place .your-avatar { background: #f6e4ce; border-color: #dfb98f; color: #ac571e; }
+.app-shell .room-page .human-place .key-hint { background: transparent; color: inherit; border-color: #ffffff60; }
+.app-shell .room-page .under-table .text-button { color: var(--muted); }
+.app-shell .room-page .evidence-panel,
+.app-shell .room-page .behind-discussion { border-color: var(--line); }
+.app-shell .room-page .human-place .call-controls { gap: 9px; }
+.app-shell .room-page .human-place .call-controls > .rt-Button.primary { min-height: 43px; border-radius: 999px; padding: 0 21px; font-size: 13px; }
+.app-shell .room-page .human-place .control-icon.rt-IconButton { width: 40px; height: 40px; min-height: 40px; border: 0; background: transparent; color: var(--muted); border-radius: 50%; }
+.app-shell .room-page .human-place .control-icon.rt-IconButton:hover,
+.app-shell .room-page .human-place .control-icon.rt-IconButton[aria-pressed=true] { background: var(--raised); color: var(--text); }
+.app-shell .room-page .human-place .send-button.rt-IconButton { width: 40px; height: 40px; min-height: 40px; border-radius: 50%; background: var(--amber); color: var(--amber-ink, #fff); border: 0; }
+.app-shell .room-page .seminar-notebook { border: 0; border-left: 1px solid var(--line); border-radius: 0; box-shadow: none; padding: 0 0 0 23px; background: transparent; --text: #2f2b26; --muted: #817568; --line: #e6dcd0; }
+.app-shell .room-page .seminar-notebook .discussion-board { margin-top: 18px; }
+.app-shell .room-page .seminar-notebook .side-panel-tabs { height: 38px; font-size: 12px; }
+.app-shell .room-page .seminar-notebook .side-panel-tabs button { flex: 1; }
+.app-shell .room-page .seminar-notebook::before { display: none; }
+.app-shell .room-page .notebook-kicker { display: none; }
+.app-shell .room-page .seminar-notebook .board-heading h2 { max-width: none; font-size: 26px; }
+.app-shell .room-page .seminar-notebook .board-tabs { border: 0; margin: 18px 0; padding: 0; width: 100%; }
+.app-shell .room-page .seminar-notebook .board-tabs button { padding: 0 12px; border: 0; min-height: 36px; font-size: 12px; color: #6a604e; }
+.app-shell .room-page .seminar-notebook .board-tabs button[data-state=on] { color: #28251d; }
+.app-shell .room-page .seminar-notebook .board-empty { padding: 42px 4px; text-align: left; }
+.app-shell .room-page .seminar-notebook .board-empty h3 { font-family: var(--sans); font-size: 13px; font-weight: 500; margin-bottom: 10px; }
+.app-shell .room-page .seminar-notebook .board-empty p { font-size: 12px; }
+.app-shell .room-page .seminar-notebook .board-empty > svg { display: none; }
+.app-shell .room-page .seminar-notebook .open-question { transform: none; background: transparent; border: 0; border-top: 1px solid #cdbb9a; border-radius: 0; padding: 20px 0 0; box-shadow: none; }
+.app-shell .room-page .seminar-notebook .open-question p { font-family: var(--sans); font-size: 13px; }
+@media(max-width: 640px) {
+  .app-shell .app-header { height: 86px; min-height: 86px; }
+  .app-shell .brand-home .brand-name { font-size: 25px; }
+  .app-shell .brand-home .brand-edition { font-size: 9px; }
+  .app-shell .header-right { gap: 12px; }
+  .theme-control { gap: 7px; }
+  .theme-control > span { display: none; }
+  .app-shell .rt-Button.home-button { min-height: 44px; width: 38px; padding: 0; }
+  .app-shell .room-page .human-place { padding-inline: 14px; }
+  .app-shell .room-page .human-place .call-controls { gap: 4px; }
+  .app-shell .room-page .human-place .call-controls > .rt-Button.primary { min-width: 72px; padding-inline: 13px; font-size: 12px; }
+  .app-shell .room-page .human-place .control-icon.rt-IconButton { width: 35px; height: 40px; }
+}

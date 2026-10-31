@@ -1,0 +1,36 @@
+# Dependencies and builds
+node_modules/
+actor/node_modules/
+dist/
+web/dist/
+actor/dist/
+
+# Secrets — only .env.hackathon.example is committed
+.env
+.env.*
+!.env.hackathon.example
+*.pem
+*.key
+
+# Local runtime state, identities, logs, recordings
+.local/
+.durable-actors/
+actor/.durable-actors/
+actor/.terse/
+.terse/
+*.log
+logs/
+recordings/
+*.webm
+*.wav
+*.mp3
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Keep selected demo images; leave iterative QA captures local.
+docs/screenshots/*
+!docs/screenshots/demo-ready-home.png
+!docs/screenshots/orange-live-seminar.png

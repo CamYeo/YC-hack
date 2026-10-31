@@ -1,0 +1,56 @@
+.app-shell.theme-halloween {
+  color-scheme: light;
+  --bg: #faf7f1;
+  --surface: #fffaf3;
+  --raised: #f4e9d9;
+  --text: #2f2b26;
+  --muted: #817568;
+  --amber: #bb571e;
+  --amber-ink: #fffaf3;
+  --line: #e6dcd0;
+  --faint: #f4eee6;
+  --red: #b64232;
+  --green: #597451;
+  color: var(--text);
+  background: var(--bg);
+  box-shadow: 0 0 0 100vmax var(--bg);
+}
+.brand-home { color: var(--text); text-decoration: none; flex-shrink: 0; }
+.brand-home:hover { color: var(--text); }
+.brand-home .brand-name { letter-spacing: -.055em; }
+.brand-home .brand-edition { font-size: 11px; letter-spacing: .015em; }
+.theme-halloween .brand-mark { color: var(--amber); }
+.home-button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 9px 13px; min-height: 42px; border: 1px solid var(--line); border-radius: 5px; color: var(--text); background: transparent; font-size: 12px; }
+.home-button:hover { border-color: var(--amber); background: var(--raised); }
+.home-button[aria-current=page] { color: var(--muted); }
+.theme-halloween .app-header { border-color: #68503970; }
+.theme-halloween .app-footer { border-color: #68503970; }
+.theme-halloween .button.primary { color: #27170c; background: var(--amber); border-color: var(--amber); }
+.theme-halloween .button.primary:hover:not(:disabled) { background: #ffd08a; border-color: #ffd08a; }
+.theme-halloween .button.secondary:hover:not(:disabled) { background: #332737; }
+.theme-halloween .theme-switch { color: var(--muted); }
+.theme-halloween .theme-switch[aria-pressed=true] { color: var(--amber); }
+.theme-halloween .switch-track>span { background: #fff3d8; }
+.theme-halloween input::placeholder,
+.theme-halloween textarea::placeholder { color: #b4a69e; }
+.theme-halloween .notice-bar { background: #322329; color: #f9d7b1; border-color: #674838; }
+.theme-halloween .error-text { color: var(--red); }
+.theme-halloween .provider-card { background: var(--surface); }
+.theme-halloween .connection-card { color: var(--text); background: var(--surface); }
+.theme-halloween .mode-badge { color: var(--amber); }
+.theme-halloween .reflection-next { background: #211b26; }
+.theme-halloween .reflection-cards article { background: var(--surface); }
+.theme-halloween .result-status { color: var(--text); }
+@media(max-width: 640px) {
+  .app-header { min-height: 84px; height: auto; padding: 15px 0; gap: 12px; }
+  .brand-home { gap: 7px; }
+  .brand-home .brand-name { font-size: 25px; }
+  .brand-home .brand-edition { font-size: 9px; margin-top: 7px; }
+  .brand-home .brand-mark { width: 27px; }
+  .header-right { gap: 8px; }
+  .theme-switch { padding-left: 0; gap: 6px; }
+  .theme-switch>span:not(.switch-track) { display: none; }
+  .home-button { min-height: 44px; padding: 9px 10px; }
+  .home-button>span { display: none; }
+  .header-right .mode-badge { display: none; }
+}

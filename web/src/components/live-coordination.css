@@ -1,0 +1,40 @@
+.live-coordination { color: var(--text); font-family: var(--sans); }
+.coordination-live-status { display: flex; gap: 6px; align-items: center; font-size: 10px; color: var(--muted); padding: 18px 0 8px; }
+.coordination-live-status > span:last-child { margin-left: auto; font-size: 9px; }
+.connection-dot { width: 5px; height: 5px; border-radius: 50%; background: #a69d91; }
+.connection-dot.connected { background: #6c895c; }
+.live-network { position: relative; height: 205px; width: 100%; max-width: 300px; margin: 4px auto 14px; }
+.live-network > svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.live-network > svg > path { fill: none; stroke: #cbbcac; stroke-width: 1; stroke-dasharray: 4 5; }
+.live-network.relay-active > svg > path { stroke: #cf7934; animation: message-flow 1.8s linear infinite; }
+.network-node { position: absolute; display: flex; flex-direction: column; align-items: center; gap: 5px; transform: translateX(-50%); font-size: 9px; white-space: nowrap; color: var(--muted); }
+.node-disc { width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; background: #faf6ef; color: #817462; border: 1px solid #ded3c4; border-radius: 50%; font-size: 14px; }
+.node-active .node-disc { color: #a54c15; background: #fff1df; border-color: #d58a4d; box-shadow: 0 0 0 3px #da8c3e12; }
+.peer-node { top: 9px; }.peer-0 { left: 16%; }.peer-1 { left: 50%; }.peer-2 { left: 84%; }
+.relay-node { top: 78px; left: 50%; }.relay-node .node-disc { background: #b75b24; border-color: #b75b24; color: #fff8ed; width: 40px; height: 40px; }
+.evidence-node { top: 151px; left: 16%; }.human-node { top: 151px; left: 50%; }.actor-node { top: 151px; left: 84%; }
+.actor-facts { display: flex; justify-content: space-between; gap: 10px; padding: 11px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); font-size: 10px; color: var(--muted); }
+.actor-facts strong { color: var(--text); font-weight: 500; margin-left: 7px; }
+.delivery-detail { font-size: 10px; color: var(--muted); padding: 10px 0 2px; }
+.delivery-detail summary { cursor: pointer; }.delivery-detail p { font-size: 10px; line-height: 1.7; }
+.recovery-proof { display: flex; align-items: flex-start; gap: 8px; font-size: 11px; line-height: 1.6; padding: 13px 0; color: #426146; }
+.recovery-proof small { font-size: 10px; color: var(--muted); }
+.agent-events-heading { display: flex; justify-content: space-between; padding: 20px 0 10px; font-size: 11px; font-weight: 500; }
+.agent-events-heading > span { color: var(--muted); }
+.agent-event-list { max-height: 235px; overflow-y: auto; scrollbar-width: thin; }
+.agent-event { display: flex; align-items: baseline; gap: 8px; width: 100%; padding: 9px 6px; text-align: left; border: 0; border-radius: 6px; background: none; color: var(--text); }
+.agent-event.selected { background: #e9ddca80; }.agent-event:hover { background: #e9ddca80; }
+.event-dot { background: #a89b87; width: 4px; height: 4px; border-radius: 50%; flex-shrink: 0; }
+.agent-event.selected .event-dot { background: #c46a2b; }.agent-event > span:nth-child(2) { min-width: 0; }
+.agent-event strong { display: block; font-size: 10px; font-weight: 500; line-height: 1.5; }
+.agent-event small { font-size: 9px; display: block; color: var(--muted); margin-top: 2px; }
+.agent-event time { margin-left: auto; font-size: 8px; color: var(--muted); white-space: nowrap; }
+.no-agent-events { font-size: 11px; color: var(--muted); padding: 15px 0; }
+.event-inspector { border-top: 1px solid var(--line); margin-top: 12px; padding-top: 13px; font-size: 10px; }
+.event-inspector summary { cursor: pointer; }.event-inspector summary > span { float: right; color: var(--muted); }
+.event-inspector p { font-size: 11px; line-height: 1.7; overflow-wrap: anywhere; }
+.event-inspector dl { display: grid; grid-template-columns: 52px 1fr; gap: 6px; font-size: 9px; line-height: 1.6; }
+.event-inspector dt { color: var(--muted); }.event-inspector dd { margin: 0; overflow-wrap: anywhere; }
+.room-page .side-panel-tabs { width: 100%; }
+@keyframes message-flow { to { stroke-dashoffset: -18; } }
+@media(prefers-reduced-motion:reduce) { .live-network > svg > path { animation: none !important; } }
