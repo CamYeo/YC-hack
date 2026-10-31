@@ -14,7 +14,22 @@ export async function request<T>(path: string, options: RequestInit = {}): Promi
 }
 export const getStatus = () => request<ProviderStatus>('/api/status')
 export const getTopics = () => request<TopicsResponse>('/api/topics')
-export const createRoom = (input: CreateRoomRequest) => request<CreateRoomResponse>('/api/rooms', { method: 'POST', body: JSON.stringify(input) })
+export async function createRoom(input: CreateRoomRequest): Promise<CreateRoomResponse> {
+  try {
+    return await request<CreateRoomResponse>('/api/rooms', { method: 'POST', body: JSON.stringify(input) })
+  } catch (error) {
+    if (error instanceof Error && error.message === 'Agent Relay could not be reached') {
+      throw new Error('Agent Relay could not be reached, so the seminar could not start. Check your internet connection, then click Start a seminar to retry.', { cause: error })
+    }
+    if (error instanceof Error && error.name === 'TimeoutError') {
+      throw new Error('Room setup took too long. Check your connection, then click Start a seminar to retry.', { cause: error })
+    }
+    if (error instanceof TypeError) {
+      throw new Error('The local seminar service could not be reached. Check that the app is running, then click Start a seminar to retry.', { cause: error })
+    }
+    throw error
+  }
+}
 export const getScribeToken = (room: SavedRoom, signal?: AbortSignal) => request<SttTokenResponse>(`/api/rooms/${encodeURIComponent(room.roomId)}/stt-token`, { method: 'POST', headers: { 'x-room-token': room.roomToken }, signal })
 const storageKey = 'apprentice.local-room.v1'
 export function readSavedRoom(): SavedRoom | null {

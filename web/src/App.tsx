@@ -31,7 +31,11 @@ function Workspace() {
     if (busy) return
     setBusy(true); setError(null)
     // A user gesture primes audio before the asynchronous room setup.
-    const audio = new AudioContext(); void audio.resume().then(() => audio.close()).catch(() => {})
+    // Audio support must never leave the start button stuck in its busy state.
+    try {
+      const audio = new AudioContext()
+      void audio.resume().catch(() => {}).finally(() => audio.close()).catch(() => {})
+    } catch { /* Room creation and captions still work when browser audio is unavailable. */ }
     try { const created = await createRoom(input); saveRoom(created); setRoom({ ...created, resumed: false }); window.scrollTo({ top: 0 }) }
     catch (failure) { setError(failure instanceof Error ? failure.message : 'The room could not be created. Try again.') }
     finally { setBusy(false) }
